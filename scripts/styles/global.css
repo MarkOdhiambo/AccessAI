@@ -1,0 +1,10 @@
+body{
+    height:400px;
+    width:350px;
+}
+
+.title{
+    display:inline-grid;
+    grid-template-columns: 55px auto;
+    
+}

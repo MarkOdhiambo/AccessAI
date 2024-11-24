@@ -1,0 +1,36 @@
+{
+    "name": "Access AI",
+    "description": "This is an accessibility chrome extension to aid in the utilisation of the internet",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "scripts/Access.html"
+    },
+    "icons": {
+        "16": "images/Access16.png",
+        "32": "images/Access32.png",
+        "48": "images/Access48.png",
+        "128": "images/Access128.png"
+      },
+      "background": {
+        "service_worker": "scripts/background.js"
+      },
+      "permissions": ["scripting", "activeTab"],
+      "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Q",
+        "mac": "Command+B"
+            }
+        }
+    },
+      "content_scripts": [
+        {
+          "js": ["scripts/content.js"],
+          "matches": [
+            "https://developer.chrome.com/docs/extensions/*",
+            "https://developer.chrome.com/docs/webstore/*"
+          ]
+        }
+      ]
+  }
